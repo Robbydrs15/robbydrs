@@ -1,24 +1,2 @@
-# Daftar pustakawan untuk login
-librarians = {
-    'pustakawan1': 'pass123',
-    'pustakawan2': 'pass456'
-}
 
-def login(username, password):
-    """Memeriksa username dan password pustakawan."""
-    if username in librarians and librarians[username] == password:
-        return True
-    return False
-
-def main():
-    print("Selamat datang di sistem perpustakaan! Silakan login sebagai pustakawan.")
-    username = input("Masukkan username: ")
-    password = input("Masukkan password: ")
     
-    if login(username, password):
-        print("Login berhasil! Selamat datang, " + username)
-    else:
-        print("Login gagal! Username atau password salah.")
-
-if __name__ == "__main__":
-    main()
