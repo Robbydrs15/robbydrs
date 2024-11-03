@@ -1,1 +1,24 @@
+import sqlite3
+
+# Buat database dan tabel
+def create_database():
+    conn = sqlite3.connect('perpustakaan.db')
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS anggota (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    ''')
+    
+    # Contoh menambahkan anggota (username dan password)
+    cursor.execute("INSERT OR IGNORE INTO anggota (username, password) VALUES ('anggota1', 'password1')")
+    cursor.execute("INSERT OR IGNORE INTO anggota (username, password) VALUES ('anggota2', 'password2')")
+    
+    conn.commit()
+    conn.close()
+
+create_database()
 
