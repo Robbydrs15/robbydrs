@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Unair</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat Datang di Perpustakaan Kami</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Judul Buku</th>
+                <th>Pengarang</th>
+                <th>Tahun Terbit</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Belajar JavaScript</td>
+                <td>John Doe</td>
+                <td>2020</td>
+                <td><button class="details" data-title="Belajar JavaScript" data-author="John Doe" data-year="2020" data-description="Buku ini membahas dasar-dasar JavaScript.">Detail</button></td>
+            </tr>
+            <tr>
+                <td>Mastering jQuery</td>
+                <td>Jane Smith</td>
+                <td>2021</td>
+                <td><button class="details" data-title="Mastering jQuery" data-author="Jane Smith" data-year="2021" data-description="Buku ini menjelaskan berbagai teknik menggunakan jQuery.">Detail</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="dialog" title="Detail Buku" style="display:none;">
+        <p id="book-details"></p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".details").on("click", function() {
+                const title = $(this).data("title");
+                const author = $(this).data("author");
+                const year = $(this).data("year");
+                const description = $(this).data("description");
+
+                const details = `<strong>Judul:</strong> ${title}<br>
+                                 <strong>Pengarang:</strong> ${author}<br>
+                                 <strong>Tahun Terbit:</strong> ${year}<br>
+                                 <strong>Deskripsi:</strong> ${description}`;
+
+                $("#book-details").html(details);
+                $("#dialog").dialog({
+                    modal: true,
+                    buttons: {
+                        "Tutup": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
 
