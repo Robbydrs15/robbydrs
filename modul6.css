@@ -1,0 +1,763 @@
+/* Reset dan styling dasar yang lebih konsisten */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu a:hover {
+    color: #3498db;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section.links ul {
+    list-style: none;
+}
+
+.footer-section.links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.links a:hover {
+    color: #3498db;
+}
+
+.footer-section.contact i {
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2c3e50;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: rgba(255,255,255,0.1);
+        box-shadow: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* History Section Styles */
+.history {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.history h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.history-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.history-image {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-text {
+    flex: 1;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .history {
+        padding: 40px 0;
+    }
+
+    .history-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .history-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .history h2 {
+        font-size: 2rem;
+    }
+
+    .history-text p {
+        font-size: 1rem;
+    }
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('bahan/perpus-hero.jpg'); /* Tambahkan gambar background */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: slideDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 1s ease-out 0.5s forwards;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.hero .btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes untuk animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Add at the end of your CSS file */
+.book-gallery {
+    padding: 120px 0 80px;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.book-gallery h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.book-gallery h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #3498db;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Styling untuk slider container */
+.book-slider {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px 40px;
+}
+
+/* Styling untuk item buku */
+.book-item {
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.book-item a {
+    text-decoration: none;
+    display: block;
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.book-item:hover a {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.book-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-item h3 {
+    margin: 15px 0;
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Styling untuk tombol navigasi slider */
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 18px;
+    opacity: 1;
+}
+
+.slick-prev:before {
+    content: '\f104';
+}
+
+.slick-next:before {
+    content: '\f105';
+}
+
+.slick-prev {
+    left: -10px;
+}
+
+.slick-next {
+    right: -10px;
+}
+
+/* Styling untuk dots navigasi */
+.slick-dots {
+    bottom: -40px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #3498db;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #3498db;
+}
+
+/* Styling untuk Fancybox */
+.fancybox-button {
+    background: #3498db;
+}
+
+.fancybox-button:hover {
+    background: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .book-gallery {
+        padding: 100px 0 60px;
+    }
+
+    .book-gallery h2 {
+        font-size: 2rem;
+    }
+
+    .book-item {
+        padding: 10px;
+    }
+
+    .book-item img {
+        height: 300px;
+    }
+
+    .book-slider {
+        padding: 10px 30px;
+    }
+}
+
+/* Tambahkan di CSS yang sudah ada */
+
+/* Loading animation */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Draggable styling */
+.being-dragged {
+    opacity: 0.8;
+    transform: scale(1.1);
+    z-index: 1000;
+}
+
+/* Search box styling */
+.search-container {
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+#search-books {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#search-books:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(52,152,219,0.3);
+}
+
+/* Tooltipster custom theme */
+.tooltipster-noir {
+    border-radius: 5px;
+    background: #2c3e50;
+    color: #fff;
+}
+
+/* Animate.css overrides */
+.animate__animated.animate__pulse {
+    --animate-duration: 0.5s;
+}
+
+/* jQuery UI Autocomplete styling */
+.ui-autocomplete {
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.ui-menu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ui-menu-item:hover {
+    background: #f8f9fa;
+    color: #3498db;
+}
+
+.search-section {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-item {
+    position: relative;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.book-details {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+}
+
+.book-item:hover .book-details {
+    display: block;
+}
+
+/* Adjust main content spacing */
+main {
+    padding-top: 80px; /* Sesuaikan dengan tinggi navbar Anda */
+}
+
+.search-section {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust book item and details positioning */
+.book-item {
+    position: relative;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    background: white;
+}
+
+.book-details {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Memberikan jarak 10px dari book-item */
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    z-index: 1000; /* Memastikan detail muncul di atas elemen lain */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px; /* Lebar tetap untuk detail */
+    margin-top: 5px;
+}
+
+/* Menambahkan arrow indicator */
+.book-details::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+/* Mengatur posisi detail untuk buku di pinggir */
+.book-item:last-child .book-details {
+    right: 0;
+    left: auto;
+}
+
+.book-item:first-child .book-details {
+    left: 0;
+    right: auto;
+}
+
+/* Memperbaiki hover state */
+.book-item:hover {
+    transform: translateY(-5px);
+    z-index: 1001; /* Memastikan item yang di-hover muncul di atas yang lain */
+}
+
+.book-item:hover .book-details {
+    display: block;
+}
+
+/* Mengatur responsive layout */
+@media (max-width: 768px) {
+    .book-details {
+        width: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .book-item:last-child .book-details,
+    .book-item:first-child .book-details {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Memastikan slider tetap berfungsi dengan baik */
+.book-slider {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Tambahkan scrollbar jika konten detail terlalu panjang */
+.book-details {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Memperbaiki tampilan scrollbar */
+.book-details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.book-details::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.book-details::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.book-details::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

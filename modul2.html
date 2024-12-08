@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library Robby Darius</title>
+    
+    <!-- Font Awesome untuk icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts - Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="modul2.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-reader"></i>
+                    Digital Library
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a></li>
+                    <li><a href="tentang-kami.html">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-cogs"></i> Layanan
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="perpanjangan.html">
+                                <i class="fas fa-clock"></i> Perpanjangan Peminjaman
+                            </a>
+                            <a href="pemesanan.html">
+                                <i class="fas fa-book"></i> Pemesanan Buku
+                            </a>
+                            <a href="tabel.html">
+                                <i class="fas fa-table"></i> Tabel Bahan Buku
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-sync"></i> Sirkulasi
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="Daftar Anggota.html">
+                        <i class="fas fa-users"></i> Daftar Anggota
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-tasks"></i> Tugas
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="modul1.html"><i class="fas fa-file"></i> MODUL 1</a>
+                            <a href="modul2.html"><i class="fas fa-file"></i> MODUL 2</a>
+                            <a href="modul3.html"><i class="fas fa-file"></i> MODUL 3</a>
+                            <a href="modul4.html"><i class="fas fa-file"></i> MODUL 4</a>
+                            <a href="modul5.html"><i class="fas fa-file"></i> MODUL 5</a>
+                            <a href="modul6.html"><i class="fas fa-file"></i> MODUL 6</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 7</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 8</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h2>Formulir Anggota Perpustakaan</h2>
+                <h3>Program Studi Perpustakaan dan Sains Informasi</h3>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nim">NIM:</label>
+                        <input type="text" id="nim" name="nim" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat:</label>
+                        <textarea id="alamat" name="alamat" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Kelamin:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="laki" name="jenisKelamin" value="Laki-laki">
+                            <label for="laki">Laki-laki</label>
+                            <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noHp">No HP:</label>
+                        <input type="tel" id="noHp" name="noHp" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tempatLahir">Tempat Lahir:</label>
+                        <input type="text" id="tempatLahir" name="tempatLahir" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggalLahir">Tanggal Lahir:</label>
+                        <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Kirim</button>
+                </form>
+            </div>
+        </div>
+        <section>
+            <!-- Tabel Bahan Buku -->
+            <div class="container">
+                <div class="table-container">
+                    <h2>Tabel Bahan Buku</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Judul Buku</th>
+                                <th>Pengarang</th>
+                                <th>Tahun Terbit</th>
+                                <th>Penerbit</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Pemrograman Web Dasar</td>
+                                <td>John Doe</td>
+                                <td>2022</td>
+                                <td>Informatika</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Database Management</td>
+                                <td>Jane Smith</td>
+                                <td>2021</td>
+                                <td>Andi Offset</td>
+                                <td>Dipinjam</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Artificial Intelligence: Modern Approach</td>
+                                <td>Stuart Russell</td>
+                                <td>2023</td>
+                                <td>Pearson</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Data Science for Beginners</td>
+                                <td>Michael Johnson</td>
+                                <td>2022</td>
+                                <td>O'Reilly Media</td>
+                                <td>Tersedia</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Cyber Security Essentials</td>
+                                <td>Sarah Williams</td>
+                                <td>2023</td>
+                                <td>Wiley</td>
+                                <td>Dipinjam</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Form Pemesanan Buku -->
+                <div class="form-container">
+                    <h2>Form Pemesanan Buku</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="judulBuku">Judul Buku:</label>
+                            <input type="text" id="judulBuku" name="judulBuku" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="namaPemesan">Nama Pemesan:</label>
+                            <input type="text" id="namaPemesan" name="namaPemesan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tanggalPesan">Tanggal Pemesanan:</label>
+                            <input type="date" id="tanggalPesan" name="tanggalPesan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="durasi">Durasi Peminjaman (hari):</label>
+                            <input type="number" id="durasi" name="durasi" min="1" max="14" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Pesan Buku</button>
+                    </form>
+                </div>
+
+                <!-- Form Perpanjangan Peminjaman -->
+                <div class="form-container">
+                    <h2>Form Perpanjangan Peminjaman</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nomorPeminjaman">Nomor Peminjaman:</label>
+                            <input type="text" id="nomorPeminjaman" name="nomorPeminjaman" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="judulBukuPerpanjangan">Judul Buku:</label>
+                            <input type="text" id="judulBukuPerpanjangan" name="judulBukuPerpanjangan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="namaPeminjam">Nama Peminjam:</label>
+                            <input type="text" id="namaPeminjam" name="namaPeminjam" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tanggalPerpanjangan">Tanggal Perpanjangan:</label>
+                            <input type="date" id="tanggalPerpanjangan" name="tanggalPerpanjangan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alasan">Alasan Perpanjangan:</label>
+                            <textarea id="alasan" name="alasan" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Ajukan Perpanjangan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Kami</h3>
+                    <p>Digital Library Robby Darius adalah platform perpustakaan digital yang menyediakan akses ke berbagai sumber daya pendidikan dan literatur.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-phone"></i> +62 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@digitallibrary.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Library Robby Darius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

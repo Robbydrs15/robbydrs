@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library Robby Darius</title>
+    
+    <!-- Font Awesome untuk icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts - Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="modul5.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-reader"></i>
+                    Digital Library
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a></li>
+                    <li><a href="tentang-kami.html">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-cogs"></i> Layanan
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="perpanjangan.html">
+                                <i class="fas fa-clock"></i> Perpanjangan Peminjaman
+                            </a>
+                            <a href="pemesanan.html">
+                                <i class="fas fa-book"></i> Pemesanan Buku
+                            </a>
+                            <a href="tabel.html">
+                                <i class="fas fa-table"></i> Tabel Bahan Buku
+                            </a>
+                            <a href="#" onclick="showPameran(); return false;" style="display: block !important;">
+                                <i class="fas fa-bookmark"></i> Pameran Buku
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-sync"></i> Sirkulasi
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="Daftar Anggota.html">
+                        <i class="fas fa-users"></i> Daftar Anggota
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-tasks"></i> Tugas
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="modul1.html"><i class="fas fa-file"></i> MODUL 1</a>
+                            <a href="modul2.html"><i class="fas fa-file"></i> MODUL 2</a>
+                            <a href="modul3.html"><i class="fas fa-file"></i> MODUL 3</a>
+                            <a href="modul4.html"><i class="fas fa-file"></i> MODUL 4</a>
+                            <a href="modul5.html"><i class="fas fa-file"></i> MODUL 5</a>
+                            <a href="modul6.html"><i class="fas fa-file"></i> MODUL 6</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 7</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 8</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            
+        </section>
+        <div class="container">
+            <button id="toggleExhibition" onclick="togglePameran()">
+                <i class="fas fa-eye"></i> Tampilkan Pameran
+            </button>
+
+            <div id="exhibitionContainer" style="display: none;">
+                <h2>Pameran Buku</h2>
+                <div class="exhibition-section">
+                    <div class="input-group">
+                        <label for="bookSelect">Pilih Buku:</label>
+                        <select id="bookSelect" onchange="fillBookDetails()">
+                            <option value="">-- Pilih Buku --</option>
+                            <option value="1">The Lord of the Rings</option>
+                            <option value="2">To Kill a Mockingbird</option>
+                            <option value="3">Pride and Prejudice</option>
+                            <option value="4">The Great Gatsby</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="bookTitle">Judul Buku:</label>
+                        <input type="text" id="bookTitle" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="author">Penulis:</label>
+                        <input type="text" id="author" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="exhibitionDate">Tanggal Pameran:</label>
+                        <input type="date" id="exhibitionDate">
+                    </div>
+                    <button onclick="tambahBukuPameran()">Tambah Buku Pameran</button>
+                    <div id="exhibitionList"></div>
+                </div>
+            </div>
+
+            <h2>Kalkulator Denda Perpustakaan</h2>
+            <div class="calculator-section">
+                <div class="input-group">
+                    <label for="days">Jumlah Hari Keterlambatan:</label>
+                    <input type="number" id="days" min="0">
+                </div>
+                <div class="input-group">
+                    <label for="bookCount">Jumlah Buku:</label>
+                    <input type="number" id="bookCount" min="1">
+                </div>
+                <button onclick="hitungDenda()">Hitung Denda</button>
+                <div id="result"></div>
+            </div>
+
+            <div class="container">
+                <!-- Tombol toggle untuk daftar buku -->
+                <button id="toggleBookList" onclick="toggleDaftarBuku()">
+                    <i class="fas fa-book"></i> Tampilkan Daftar Buku
+                </button>
+
+                <!-- Container untuk daftar buku -->
+                <div id="bookListContainer" style="display: none;">
+                    <h2>Daftar Buku Tersedia</h2>
+                    <div class="book-grid">
+                        <!-- Book 2 -->
+                        <div class="book-card">
+                            <div class="book-image-container">
+                                <img src="bahan/lord.jpeg" alt="Book Cover" id="book2-image">
+                                <input type="file" id="book2-input" onchange="changeBookImage(this, 'book2-image')" accept="image/*">
+                                <label for="book2-input" class="change-image-btn">
+                                    <i class="fas fa-camera"></i> Ganti Gambar
+                                </label>
+                            </div>
+                            <h3>Lord of the Rings</h3>
+                            <p>Penulis: J.R.R. Tolkien</p>
+                            <p>Genre: Fantasy</p>
+                            <p class="status borrowed">Status: Dipinjam</p>
+                        </div>
+
+                        <!-- Book 3 -->
+                        <div class="book-card">
+                            <div class="book-image-container">
+                                <img src="bahan/mock.jpeg" alt="Book Cover" id="book3-image">
+                                <input type="file" id="book3-input" onchange="changeBookImage(this, 'book3-image')" accept="image/*">
+                                <label for="book3-input" class="change-image-btn">
+                                    <i class="fas fa-camera"></i> Ganti Gambar
+                                </label>
+                            </div>
+                            <h3>To Kill a Mockingbird</h3>
+                            <p>Penulis: Harper Lee</p>
+                            <p>Genre: Classic</p>
+                            <p class="status available">Status: Tersedia</p>
+                        </div>
+
+                        <!-- Book 4 -->
+                        <div class="book-card">
+                            <div class="book-image-container">
+                                <img src="bahan/prode.jpeg" alt="Book Cover" id="book4-image">
+                                <input type="file" id="book4-input" onchange="changeBookImage(this, 'book4-image')" accept="image/*">
+                                <label for="book4-input" class="change-image-btn">
+                                    <i class="fas fa-camera"></i> Ganti Gambar
+                                </label>
+                            </div>
+                            <h3>Pride and Prejudice</h3>
+                            <p>Penulis: Jane Austen</p>
+                            <p>Genre: Romance</p>
+                            <p class="status borrowed">Status: Dipinjam</p>
+                        </div>
+
+                        <!-- Book 5 -->
+                        <div class="book-card">
+                            <div class="book-image-container">
+                                <img src="bahan/thegreat.jpeg" alt="Book Cover" id="book5-image">
+                                <input type="file" id="book5-input" onchange="changeBookImage(this, 'book5-image')" accept="image/*">
+                                <label for="book5-input" class="change-image-btn">
+                                    <i class="fas fa-camera"></i> Ganti Gambar
+                                </label>
+                            </div>
+                            <h3>The Great Gatsby</h3>
+                            <p>Penulis: F. Scott Fitzgerald</p>
+                            <p>Genre: Classic</p>
+                            <p class="status available">Status: Tersedia</p>
+                        </div>
+
+                        <!-- Book 6 -->
+                        <div class="book-card">
+                            <div class="book-image-container">
+                                <img src="bahan/hobbit.jpeg" alt="Book Cover" id="book6-image">
+                                <input type="file" id="book6-input" onchange="changeBookImage(this, 'book6-image')" accept="image/*">
+                                <label for="book6-input" class="change-image-btn">
+                                    <i class="fas fa-camera"></i> Ganti Gambar
+                                </label>
+                            </div>
+                            <h3>The Hobbit</h3>
+                            <p>Penulis: J.R.R. Tolkien</p>
+                            <p>Genre: Fantasy</p>
+                            <p class="status available">Status: Tersedia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Variabel dan Array
+                const dendaPerHari = 2000;
+                const books = [
+                    { id: 1, title: "Harry Potter", status: "tersedia", category: "Fiksi" },
+                    { id: 2, title: "Lord of the Rings", status: "dipinjam", category: "Fiksi" },
+                    { id: 3, title: "Python Programming", status: "tersedia", category: "Teknologi" },
+                    { id: 4, title: "Data Structures", status: "tersedia", category: "Teknologi" },
+                    { id: 5, title: "Web Development", status: "dipinjam", category: "Teknologi" }
+                ];
+
+                // Fungsi untuk menghitung denda
+                function hitungDenda() {
+                    // Mengambil nilai input
+                    const hari = parseInt(document.getElementById('days').value) || 0;
+                    const jumlahBuku = parseInt(document.getElementById('bookCount').value) || 0;
+                    
+                    let totalDenda = 0;
+                    let pesan = "";
+
+                    // Operator dan Struktur Kondisi
+                    if (hari <= 0) {
+                        pesan = "Tidak ada denda! 😊";
+                    } else {
+                        // Operator aritmatika
+                        totalDenda = hari * dendaPerHari * jumlahBuku;
+
+                        // Struktur kondisi untuk menentukan tingkat keterlambatan
+                        if (hari <= 7) {
+                            pesan = `Denda ringan: Rp ${totalDenda.toLocaleString()}`;
+                        } else if (hari <= 14) {
+                            // Operator tambahan untuk denda tambahan
+                            totalDenda *= 1.5;
+                            pesan = `Denda sedang: Rp ${totalDenda.toLocaleString()}`;
+                        } else {
+                            totalDenda *= 2;
+                            pesan = `Denda berat: Rp ${totalDenda.toLocaleString()}`;
+                        }
+                    }
+
+                    // Menampilkan hasil
+                    document.getElementById('result').innerHTML = `
+                        <div class="result-box">
+                            <p><strong>Hasil Perhitungan:</strong></p>
+                            <p>${pesan}</p>
+                        </div>
+                    `;
+                }
+
+                // Fungsi untuk menampilkan daftar buku
+                function tampilkanBuku() {
+                    let html = '<div class="book-grid">';
+                    
+                    // Struktur Perulangan
+                    for (let i = 0; i < books.length; i++) {
+                        const statusClass = books[i].status === "tersedia" ? "available" : "borrowed";
+                        
+                        html += `
+                            <div class="book-card ${statusClass}">
+                                <h3>Buku #${books[i].id}</h3>
+                                <p class="title">${books[i].title}</p>
+                                <p class="category">Kategori: ${books[i].category}</p>
+                                <p class="status">Status: ${books[i].status}</p>
+                            </div>
+                        `;
+                    }
+                    
+                    html += '</div>';
+                    document.getElementById('bookList').innerHTML = html;
+                }
+
+                // Panggil fungsi saat halaman dimuat
+                tampilkanBuku();
+
+                // Get exhibition books from localStorage or initialize empty array
+                const exhibitionBooks = JSON.parse(localStorage.getItem('exhibitionBooks')) || [];
+
+                // Toggle exhibition section
+                function togglePameran() {
+                    const container = document.getElementById('exhibitionContainer');
+                    const button = document.getElementById('toggleExhibition');
+                    
+                    console.log('Toggle clicked');
+                    console.log('Current display:', container.style.display);
+                    
+                    if (container.style.display === 'none') {
+                        container.style.display = 'block';
+                        button.innerHTML = '<i class="fas fa-eye-slash"></i> Sembunyikan Pameran';
+                        tampilkanBukuPameran();
+                        console.log('Showing container');
+                    } else {
+                        container.style.display = 'none';
+                        button.innerHTML = '<i class="fas fa-eye"></i> Tampilkan Pameran';
+                        console.log('Hiding container');
+                    }
+                }
+
+                // Fill book details when selected
+                function fillBookDetails() {
+                    const selectElement = document.getElementById('bookSelect');
+                    const selectedIndex = selectElement.value;
+                    
+                    if (selectedIndex !== "") {
+                        const selectedBook = availableBooks[selectedIndex];
+                        document.getElementById('bookTitle').value = selectedBook.title;
+                        document.getElementById('author').value = selectedBook.author;
+                    } else {
+                        document.getElementById('bookTitle').value = '';
+                        document.getElementById('author').value = '';
+                    }
+                }
+
+                // Add book to exhibition
+                function tambahBukuPameran() {
+                    const title = document.getElementById('bookTitle').value;
+                    const author = document.getElementById('author').value;
+                    const date = document.getElementById('exhibitionDate').value;
+                    const selectElement = document.getElementById('bookSelect');
+                    const selectedBook = availableBooks[selectElement.value];
+
+                    if (title && author && date) {
+                        exhibitionBooks.push({
+                            title,
+                            author,
+                            date,
+                            genre: selectedBook.genre
+                        });
+                        localStorage.setItem('exhibitionBooks', JSON.stringify(exhibitionBooks));
+                        tampilkanBukuPameran();
+                        resetForm();
+                    } else {
+                        alert('Mohon pilih buku dan isi tanggal pameran!');
+                    }
+                }
+
+                // Display exhibition books
+                function tampilkanBukuPameran() {
+                    const exhibitionList = document.getElementById('exhibitionList');
+                    let html = '<div class="exhibition-grid">';
+                    
+                    exhibitionBooks.forEach((book, index) => {
+                        html += `
+                            <div class="exhibition-card" onmouseover="highlightCard(this)" onmouseout="unhighlightCard(this)">
+                                <h3>${book.title}</h3>
+                                <p>Penulis: ${book.author}</p>
+                                <p>Genre: ${book.genre}</p>
+                                <p>Tanggal: ${formatDate(book.date)}</p>
+                                <button onclick="hapusBukuPameran(${index})" class="delete-btn">
+                                    <i class="fas fa-trash"></i> Hapus
+                                </button>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    exhibitionList.innerHTML = html;
+                }
+
+                // Fungsi untuk format tanggal
+                function formatDate(dateString) {
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    return new Date(dateString).toLocaleDateString('id-ID', options);
+                }
+
+                // Fungsi untuk reset form
+                function resetForm() {
+                    document.getElementById('bookSelect').value = '';
+                    document.getElementById('bookTitle').value = '';
+                    document.getElementById('author').value = '';
+                    document.getElementById('exhibitionDate').value = '';
+                }
+
+                // Fungsi untuk menghapus buku pameran
+                function hapusBukuPameran(index) {
+                    exhibitionBooks.splice(index, 1);
+                    localStorage.setItem('exhibitionBooks', JSON.stringify(exhibitionBooks));
+                    tampilkanBukuPameran();
+                }
+
+                // DOM event handlers untuk efek hover
+                function highlightCard(element) {
+                    element.style.transform = 'scale(1.02)';
+                    element.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+                }
+
+                function unhighlightCard(element) {
+                    element.style.transform = 'scale(1)';
+                    element.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                }
+
+                // Tambahkan ini untuk menampilkan buku saat halaman dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('DOM loaded');
+                    const container = document.getElementById('exhibitionContainer');
+                    const button = document.getElementById('toggleExhibition');
+                    console.log('Container:', container);
+                    console.log('Button:', button);
+                    tampilkanBukuPameran();
+                });
+
+                // Fungsi untuk toggle daftar buku
+                function toggleDaftarBuku() {
+                    const container = document.getElementById('bookListContainer');
+                    const button = document.getElementById('toggleBookList');
+                    
+                    if (container.style.display === 'none') {
+                        container.style.display = 'block';
+                        button.innerHTML = '<i class="fas fa-book-slash"></i> Sembunyikan Daftar Buku';
+                    } else {
+                        container.style.display = 'none';
+                        button.innerHTML = '<i class="fas fa-book"></i> Tampilkan Daftar Buku';
+                    }
+                }
+
+                // Fungsi untuk mengganti gambar buku
+                function changeBookImage(input, imageId) {
+                    if (input.files && input.files[0]) {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            const img = document.getElementById(imageId);
+                            img.src = e.target.result;
+                            
+                            // Simpan gambar ke localStorage
+                            localStorage.setItem(imageId, e.target.result);
+                        };
+                        
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                // Fungsi untuk memuat gambar yang tersimpan
+                function loadSavedImages() {
+                    const imageIds = [
+                        'book1-image', 
+                        'book2-image', 
+                        'book3-image', 
+                        'book4-image', 
+                        'book5-image', 
+                        'book6-image',
+                        'book7-image',
+                        'book8-image'
+                    ];
+                    
+                    imageIds.forEach(id => {
+                        const savedImage = localStorage.getItem(id);
+                        if (savedImage) {
+                            document.getElementById(id).src = savedImage;
+                        }
+                    });
+                }
+
+                // Load saved images when page loads
+                document.addEventListener('DOMContentLoaded', loadSavedImages);
+
+                // Fungsi untuk membuka modal
+                function openModal(bookCard) {
+                    const modal = document.getElementById('bookModal');
+                    const modalImg = document.getElementById('modal-image');
+                    const bookImg = bookCard.querySelector('img');
+                    
+                    // Set modal content
+                    modalImg.src = bookImg.src;
+                    document.getElementById('modal-title').textContent = bookCard.getAttribute('data-title');
+                    document.getElementById('modal-author').textContent = bookCard.getAttribute('data-author');
+                    document.getElementById('modal-genre').textContent = bookCard.getAttribute('data-genre');
+                    document.getElementById('modal-status').textContent = 'Status: ' + bookCard.getAttribute('data-status');
+                    document.getElementById('modal-description').textContent = bookCard.getAttribute('data-description');
+                    
+                    // Show modal with animation
+                    modal.style.display = "block";
+                    setTimeout(() => {
+                        modal.classList.add('show');
+                    }, 10);
+                }
+
+                // Fungsi untuk menutup modal
+                function closeModal() {
+                    const modal = document.getElementById('bookModal');
+                    modal.classList.remove('show');
+                    setTimeout(() => {
+                        modal.style.display = "none";
+                    }, 300);
+                }
+
+                // Event listeners untuk modal
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Event listener untuk tombol close
+                    document.querySelector('.close').addEventListener('click', closeModal);
+
+                    // Event listener untuk menutup modal saat mengklik di luar modal
+                    window.addEventListener('click', function(event) {
+                        const modal = document.getElementById('bookModal');
+                        if (event.target === modal) {
+                            closeModal();
+                        }
+                    });
+                });
+
+                // Prevent event bubbling for image change button
+                document.querySelectorAll('.change-image-btn').forEach(btn => {
+                    btn.onclick = function(e) {
+                        e.stopPropagation();
+                    }
+                });
+
+                // Add animation when scrolling
+                function animateCards() {
+                    const cards = document.querySelectorAll('.animate-card');
+                    cards.forEach(card => {
+                        const cardTop = card.getBoundingClientRect().top;
+                        const triggerBottom = window.innerHeight * 0.8;
+                        
+                        if (cardTop < triggerBottom) {
+                            card.classList.add('show');
+                        }
+                    });
+                }
+
+                window.addEventListener('scroll', animateCards);
+                document.addEventListener('DOMContentLoaded', animateCards);
+
+                function showPameran() {
+                    // Show the book list container if it's hidden
+                    const container = document.getElementById('bookListContainer');
+                    const button = document.getElementById('toggleBookList');
+                    
+                    if (container.style.display === 'none') {
+                        container.style.display = 'block';
+                        button.innerHTML = '<i class="fas fa-book-slash"></i> Sembunyikan Daftar Buku';
+                    }
+                    
+                    // Scroll to the book list section
+                    container.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Tambahkan console.log untuk debugging
+                    console.log('Pameran button clicked');
+                }
+            </script>
+
+            <style>
+                .calculator-section {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 30px;
+                }
+
+                .input-group {
+                    margin-bottom: 15px;
+                }
+
+                .input-group label {
+                    display: block;
+                    margin-bottom: 5px;
+                    color: #333;
+                }
+
+                .input-group input {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                }
+
+                button {
+                    background: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+
+                button:hover {
+                    background: #0056b3;
+                }
+
+                .result-box {
+                    margin-top: 20px;
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 4px;
+                }
+
+                .book-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-top: 20px;
+                }
+
+                .book-card {
+                    padding: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                .book-card.available {
+                    background: #e7f5e7;
+                }
+
+                .book-card.borrowed {
+                    background: #ffe8e8;
+                }
+
+                .book-card h3 {
+                    margin: 0 0 10px 0;
+                    color: #333;
+                }
+
+                .book-card p {
+                    margin: 5px 0;
+                }
+
+                .book-card .status {
+                    font-weight: bold;
+                }
+
+                .exhibition-section {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 30px;
+                }
+
+                .exhibition-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-top: 20px;
+                }
+
+                .exhibition-card {
+                    padding: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                .exhibition-card h3 {
+                    margin: 0 0 10px 0;
+                    color: #333;
+                }
+
+                .exhibition-card p {
+                    margin: 5px 0;
+                }
+
+                .exhibition-card .status {
+                    font-weight: bold;
+                }
+
+                #toggleExhibition {
+                    margin-bottom: 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    display: block;
+                }
+
+                #toggleExhibition:hover {
+                    background-color: #45a049;
+                }
+
+                #exhibitionContainer {
+                    transition: all 0.3s ease;
+                    width: 100%;
+                }
+
+                .input-group select {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    background-color: white;
+                }
+
+                .exhibition-card {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    transition: all 0.3s ease;
+                }
+
+                .exhibition-card h3 {
+                    color: #2c3e50;
+                    margin-bottom: 10px;
+                }
+
+                .delete-btn {
+                    background-color: #dc3545;
+                    color: white;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                }
+
+                .delete-btn:hover {
+                    background-color: #c82333;
+                }
+
+                #bookTitle, #author {
+                    background-color: #f8f9fa;
+                }
+
+                #toggleBookList {
+                    margin-bottom: 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    display: block;
+                }
+
+                #toggleBookList:hover {
+                    background-color: #45a049;
+                }
+
+                .book-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-top: 20px;
+                }
+
+                .book-card {
+                    background: #fff;
+                    padding: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    transition: all 0.3s ease;
+                }
+
+                .book-image-container {
+                    position: relative;
+                    margin-bottom: 15px;
+                }
+
+                .book-image-container img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    border-radius: 4px;
+                }
+
+                .book-image-container input[type="file"] {
+                    display: none;
+                }
+
+                .change-image-btn {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0, 0, 0, 0.7);
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .book-image-container:hover .change-image-btn {
+                    opacity: 1;
+                }
+
+                .book-card h3 {
+                    margin: 10px 0;
+                    color: #2c3e50;
+                }
+
+                .book-card p {
+                    margin: 5px 0;
+                    color: #666;
+                }
+
+                .status {
+                    font-weight: bold;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    display: inline-block;
+                }
+
+                .status.available {
+                    background: #e7f5e7;
+                    color: #28a745;
+                }
+
+                .status.borrowed {
+                    background: #ffe8e8;
+                    color: #dc3545;
+                }
+
+                /* Animation for book cards */
+                .animate-card {
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition: all 0.5s ease-out;
+                }
+
+                .animate-card.show {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .book-card {
+                    cursor: pointer;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .book-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                }
+
+                /* Modal styles */
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.8);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .modal.show {
+                    opacity: 1;
+                }
+
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto;
+                    padding: 20px;
+                    border-radius: 8px;
+                    width: 80%;
+                    max-width: 800px;
+                    position: relative;
+                    transform: translateY(-20px);
+                    transition: transform 0.3s ease;
+                }
+
+                .modal.show .modal-content {
+                    transform: translateY(0);
+                }
+
+                .modal-body {
+                    display: flex;
+                    gap: 20px;
+                }
+
+                .modal-body img {
+                    width: 300px;
+                    height: 450px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+
+                .book-details {
+                    flex: 1;
+                }
+
+                .close {
+                    position: absolute;
+                    right: 20px;
+                    top: 10px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    color: #666;
+                    padding: 5px 10px;
+                    z-index: 1001; /* Memastikan tombol close selalu di atas */
+                }
+
+                .close:hover {
+                    color: #000;
+                }
+
+                /* Hover effect for book cards */
+                .book-info {
+                    padding: 15px;
+                    transform: translateY(0);
+                    transition: transform 0.3s ease;
+                }
+
+                .book-card:hover .book-info {
+                    transform: translateY(-5px);
+                }
+
+                /* Responsive design */
+                @media (max-width: 768px) {
+                    .modal-body {
+                        flex-direction: column;
+                    }
+                    
+                    .modal-body img {
+                        width: 100%;
+                        height: 300px;
+                    }
+                }
+
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 200px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+
+                .dropdown-content a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+            </style>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Kami</h3>
+                    <p>Digital Library Robby Darius adalah platform perpustakaan digital yang menyediakan akses ke berbagai sumber daya pendidikan dan literatur.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-phone"></i> +62 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@digitallibrary.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Library Robby Darius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add this modal/popup HTML after the book grid -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Book Cover">
+                <div class="book-details">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-author"></p>
+                    <p id="modal-genre"></p>
+                    <p id="modal-status"></p>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

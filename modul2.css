@@ -1,0 +1,494 @@
+/* Reset dan styling dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu a:hover {
+    color: #3498db;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section.links ul {
+    list-style: none;
+}
+
+.footer-section.links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.links a:hover {
+    color: #3498db;
+}
+
+.footer-section.contact i {
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2c3e50;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: rgba(255,255,255,0.1);
+        box-shadow: none;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* History Section Styles */
+.history {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.history h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.history-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.history-image {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-text {
+    flex: 1;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .history {
+        padding: 40px 0;
+    }
+
+    .history-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .history-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .history h2 {
+        font-size: 2rem;
+    }
+
+    .history-text p {
+        font-size: 1rem;
+    }
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('bahan/perpus-hero.jpg'); /* Tambahkan gambar background */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: slideDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 1s ease-out 0.5s forwards;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.hero .btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes untuk animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-container h3 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tabel styling */
+.table-container {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.table-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Form container spacing */
+.form-container + .form-container {
+    margin-top: 3rem;
+}
+
+/* Number input styling */
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table-container {
+        margin: 1rem -20px;
+        padding: 0 20px;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 0.75rem;
+    }
+} 

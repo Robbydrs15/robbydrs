@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library Robby Darius</title>
+    
+    <!-- Font Awesome untuk icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts - Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="modul1.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-reader"></i>
+                    Digital Library
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a></li>
+                    <li><a href="tentang-kami.html">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-cogs"></i> Layanan
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="perpanjangan.html">
+                                <i class="fas fa-clock"></i> Perpanjangan Peminjaman
+                            </a>
+                            <a href="pemesanan.html">
+                                <i class="fas fa-book"></i> Pemesanan Buku
+                            </a>
+                            <a href="tabel.html">
+                                <i class="fas fa-table"></i> Tabel Bahan Buku
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-sync"></i> Sirkulasi
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="Daftar Anggota.html">
+                        <i class="fas fa-users"></i> Daftar Anggota
+                    </a></li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <i class="fas fa-tasks"></i> Tugas
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="modul1.html"><i class="fas fa-file"></i> MODUL 1</a>
+                            <a href="modul2.html"><i class="fas fa-file"></i> MODUL 2</a>
+                            <a href="modul3.html"><i class="fas fa-file"></i> MODUL 3</a>
+                            <a href="modul4.html"><i class="fas fa-file"></i> MODUL 4</a>
+                            <a href="modul5.html"><i class="fas fa-file"></i> MODUL 5</a>
+                            <a href="modul6.html"><i class="fas fa-file"></i> MODUL 6</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 7</a>
+                            <a href="http://localhost/robby/"><i class="fas fa-file"></i> MODUL 8</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Perpustakaan Mitra</h1>
+
+            <!-- Existing library-grid content -->
+            <div class="library-grid">
+                <!-- Perpustakaan Nasional -->
+                <div class="library-card">
+                    <img src="bahan/putra.jpg" alt="Perpustakaan Nasional">
+                    <h2>Perpustakaan putrabaruslib</h2>
+                    <p>Perpustakaan putra barus adalah perpustakaan digital.</p>
+                    <a href="https://putrabarus.github.io/putrabaruslib/
+                    " class="library-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Kunjungi Website
+                    </a>
+                </div>
+
+                <!-- Perpustakaan UI -->
+                <div class="library-card">
+                    <img src="bahan/ui.jpeg" alt="Perpustakaan UI">
+                    <h2>Perpustakaan Universitas Indonesia</h2>
+                    <p>Perpustakaan UI menyediakan berbagai koleksi digital dan fisik untuk mendukung kegiatan akademik dan penelitian.</p>
+                    <a href="https://lib.ui.ac.id" class="library-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Kunjungi Website
+                    </a>
+                </div>
+
+                <!-- Perpustakaan ITB -->
+                <div class="library-card">
+                    <img src="bahan/xaverius.jpg" alt="Perpustakaan ITB">
+                    <h2>Perpustakaan xaverius</h2>
+                    <p>Perpustakaan xaverius adalah web perpustakaan digital.</p>
+                    <a href=" https://xaverius3112.github.io/xaverius/Home.html
+                    " class="library-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Kunjungi Website
+                    </a>
+                </div>
+            </div>
+
+            <!-- Menambahkan section untuk Audio dan Video -->
+            <section class="media-section">
+                <h2>Media vidio dan audio</h2>
+                <br><h-4><center><img src="https://eduexpo.unair.ac.id/files/slider/slider1961ff9c1a143301644141594-19.png" alt="unair"><center></h4><br
+                <!-- Audio Player -->
+                <div class="audio-container">
+                    <h3>Dj Ular Engkol</h3>
+                    <audio controls>
+                        <source src="bahan/Uler Engkol.mp3" type="audio/mpeg">
+                        <source src="bahan/Uler Engkol.ogg" type="audio/ogg">
+                        Browser Anda tidak mendukung tag audio.
+                    </audio>
+                </div>
+
+                <!-- Video Player -->
+                <div class="video-container">
+                    <h3>Video Tour Perpustakaan</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aI94w6gCFzw?si=60sth9HKktTCvAAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p style="margin-bottom: 50px">
+                      
+                    <audio controls>
+                    <source src="Mighfar Suganda - Gemuruh Riuh (Official Lyric Video) _ Final 4K Version.mp3" alt="audio/mpeg">
+                    </audio>
+                    </p>
+                    </font>
+                    
+                    
+                </div>
+            </section>
+
+            <!-- Move this section to the bottom -->
+            <section class="html5-features">
+                <h2>Kelebihan HTML5 dalam Pengembangan Web Modern</h2>
+                <div class="feature-content">
+                    <p>HTML5 hadir dengan berbagai peningkatan signifikan dibandingkan versi HTML sebelumnya. Dalam website perpustakaan digital ini, kami memanfaatkan beberapa fitur unggulan HTML5:</p>
+                    
+                    <ul>
+                        <li><strong>Semantic Elements:</strong> Penggunaan tag seperti &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, dan &lt;footer&gt; membuat struktur website lebih terorganisir dan mudah dipahami.</li>
+                        
+                        <li><strong>Native Multimedia Support:</strong> Tag &lt;audio&gt; dan &lt;video&gt; memungkinkan pemutaran media tanpa plugin tambahan, seperti yang diterapkan pada bagian audio DJ Ular Engkol dan video tour perpustakaan.</li>
+                        
+                        <li><strong>Responsive Design:</strong> Dengan meta viewport dan CSS3, website kami dapat menyesuaikan tampilan di berbagai ukuran layar perangkat.</li>
+                        
+                        <li><strong>Form Validation:</strong> HTML5 menyediakan validasi form bawaan seperti required, email, dan number, meningkatkan interaksi pengguna tanpa JavaScript tambahan.</li>
+                        
+                        <li><strong>Better Accessibility:</strong> Penggunaan ARIA roles dan semantic elements meningkatkan aksesibilitas website bagi pengguna dengan keterbatasan.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <section>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Tentang Kami</h3>
+                    <p>Digital Library Robby Darius adalah platform perpustakaan digital yang menyediakan akses ke berbagai sumber daya pendidikan dan literatur.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-phone"></i> +62 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@digitallibrary.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Library Robby Darius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
